@@ -10,17 +10,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'UA-64492477-21', { 'optimize_id': 'GTM-PSFNFFF'});
-</script>
   
-<title>simple-demo</title>
-</head>
-<body>
-
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-
-
-
+  
 function implementExperimentA(value) {
   if (value ==  '0') {
     // Provide code for visitors in the original.
@@ -36,6 +27,19 @@ gtag('event', 'optimize.callback', {
     name: '<experiment_id_A>',
     callback: implementExperimentA
  });
+  
+</script>
+  
+<title>simple-demo</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+
+
+
   
   
 </body>
