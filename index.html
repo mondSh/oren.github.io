@@ -1,46 +1,68 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64492477-21"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64492477-21"></script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-64492477-21', { 'optimize_id': 'GTM-PSFNFFF' });
 
-gtag('config', 'UA-64492477-21', { 'optimize_id': 'GTM-PSFNFFF'});
-  
-  
-function implementExperimentA(value) {
-  if (value ==  '0') {
-    // Provide code for visitors in the original.
-  } else if (value == '1') {
-    // Provide code for visitors in first variant.
-  } else if (value == '2') {
-    // Provide code for visitors in section variant.
-  }
-  console.log('implementExperimentA: '+value+' !');
-}
-   
-gtag('event', 'optimize.callback', {
-    name: '_uNWIXMKSfeH7hlEmSPJzg',
-    callback: implementExperimentA
- });
-  
-</script>
-  
-<title>simple-demo</title>
+        function renderAd(value) {
+            window.googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/6870/ynt.ozen.ynetplus', [[300, 600], [160, 600], [120, 600]],
+                    'div-gpt-ad-ozen.ynetplus').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-ozen.ynetplus'); });
+        };
+
+        function implementExperiment(value) {
+            if (value == '0') {
+                // Provide code for visitors in the original.
+                renderAd(value)
+            } else if (value == '1') {
+                // Provide code for visitors in first variant.
+            } else if (value == '2') {
+                // Provide code for visitors in section variant.
+            }
+            console.log('implementExperiment: ' + value + ' !');
+        }
+
+        gtag('event', 'optimize.callback', {
+            name: '_uNWIXMKSfeH7hlEmSPJzg',
+            callback: implementExperimentA
+        });
+
+    </script>
+
+    <title>Optimize Demo</title>
 </head>
+
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
 
+    <!-- /6870/ynt.ozen.ynetplus -->
+    <div id='div-gpt-ad-ozen.ynetplus'>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-ozen.ynetplus'); });
+        </script>
+    </div>
 
+    <script>
+        implementExperiment(1);
+    </script>
 
-
-  
-  
 </body>
+
 </html>
